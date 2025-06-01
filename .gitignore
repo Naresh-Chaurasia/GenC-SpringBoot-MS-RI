@@ -1,0 +1,39 @@
+# Ignore Maven and Gradle build output
+**/target/
+**/build/
+
+# Ignore IntelliJ IDEA files
+**/.idea/
+**/*.iml
+
+# Ignore Eclipse files
+**/.project
+**/.classpath
+**/.settings/
+
+# Ignore VS Code settings
+**/.vscode/
+
+# OS-generated files
+**.DS_Store
+**Thumbs.db
+
+# Logs
+**/*.log
+
+# Ignore environment and secret files
+**/.env
+**/application.properties
+**/application.yml
+**/application-*.yml
+**/application-*.properties
+
+# Ignore node_modules if any front-end inside
+**/node_modules/
+
+# Ignore compiled class files
+**/*.class
+
+# Ignore temporary files
+**/*~
+

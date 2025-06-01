@@ -1,0 +1,42 @@
+= University - Monolithic App
+:toc: right
+:toclevels: 5
+:sectnums:
+:sectnumlevels: 5
+
+== University Swagger 
+
+
+* http://localhost:8080/swagger-ui/index.html
+
+---
+
+* POST
+
+http://localhost:8080/api/student/create
+
+----
+
+{
+"firstName": "Alice",
+"lastName": "Johnson",
+"email": "alice.johnson@example.com",
+"street": "123 Maple Street",
+"city": "Springfield"
+}
+
+
+{
+"firstName": "Bob",
+"lastName": "Smith",
+"email": "bob.smith@example.com",
+"street": "456 Oak Avenue",
+"city": "Riverside"
+}
+
+----
+
+* GET
+
+http://localhost:8080/api/student/getById/2
+
