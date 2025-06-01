@@ -1,7 +1,0 @@
-= Student - Microservice
-:toc: right
-:toclevels: 5
-:sectnums:
-:sectnumlevels: 5
-
-== Student Swagger

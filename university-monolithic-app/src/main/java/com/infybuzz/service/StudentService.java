@@ -1,5 +1,8 @@
 package com.infybuzz.service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,14 +34,21 @@ public class StudentService {
 		student.setFirstName(createStudentRequest.getFirstName());
 		student.setLastName(createStudentRequest.getLastName());
 		student.setEmail(createStudentRequest.getEmail());
-		
+
 		student.setAddress(address);
 		student = studentRepository.save(student);
 
 		return new StudentResponse(student);
 	}
-	
-	public StudentResponse getById (long id) {
+
+	public StudentResponse getById(long id) {
 		return new StudentResponse(studentRepository.findById(id).get());
+	}
+
+	public List<StudentResponse> getAll() {
+		List<Student> students = studentRepository.findAll();
+		return students.stream()
+				.map(StudentResponse::new)
+				.collect(Collectors.toList());
 	}
 }
