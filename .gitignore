@@ -23,10 +23,6 @@
 
 # Ignore environment and secret files
 **/.env
-**/application.properties
-**/application.yml
-**/application-*.yml
-**/application-*.properties
 
 # Ignore node_modules if any front-end inside
 **/node_modules/
