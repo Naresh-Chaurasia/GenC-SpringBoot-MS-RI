@@ -21,6 +21,11 @@ public class StudentController {
 	@Autowired
 	StudentService studentService;
 
+	@GetMapping("/hello")
+	public String hello() {
+		return "Hello from Student Service!";
+	}
+
 	@PostMapping("/create")
 	public StudentResponse createStudent(@RequestBody CreateStudentRequest createStudentRequest) {
 		return studentService.createStudent(createStudentRequest);
