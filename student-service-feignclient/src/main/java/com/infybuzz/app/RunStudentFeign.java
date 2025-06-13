@@ -11,24 +11,25 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
-@ComponentScan({"com.infybuzz.controller", "com.infybuzz.service"})
+@ComponentScan({ "com.infybuzz.controller", "com.infybuzz.service" })
 @EntityScan("com.infybuzz.entity")
 @EnableJpaRepositories("com.infybuzz.repository")
 @EnableFeignClients("com.infybuzz.feignclients")
 public class RunStudentFeign {
-	
+
 	@Value("${address.service.url}")
 	private String addressServiceUrl;
 
 	public static void main(String[] args) {
 		SpringApplication.run(RunStudentFeign.class, args);
 	}
-	
+
+	// TODO: Remove this method if you are not using WebClient
 	@Bean
-	public WebClient webClient () {
-		WebClient webClient =WebClient.builder()
+	public WebClient webClient() {
+		WebClient webClient = WebClient.builder()
 				.baseUrl(addressServiceUrl).build();
-		
+
 		return webClient;
 	}
 
