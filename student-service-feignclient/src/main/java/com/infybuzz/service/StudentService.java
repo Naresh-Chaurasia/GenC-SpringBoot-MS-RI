@@ -19,8 +19,6 @@ public class StudentService {
 	@Autowired
 	StudentRepository studentRepository;
 
-	// @Autowired
-	// WebClient webClient;
 
 	@Autowired
 	AddressFeignClient addressFeignClient;
@@ -55,10 +53,5 @@ public class StudentService {
 		return studentResponse;
 	}
 
-	public AddressResponse getAddressById(long addressId) {
-		Mono<AddressResponse> addressResponse = webClient.get().uri("/getById/" + addressId)
-				.retrieve().bodyToMono(AddressResponse.class);
-
-		return addressResponse.block();
-	}
+	
 }
