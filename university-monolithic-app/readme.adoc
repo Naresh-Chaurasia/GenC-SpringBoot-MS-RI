@@ -1,0 +1,54 @@
+= University Monolithic App
+
+A Spring Boot monolithic application for managing university student records, built as a single deployable unit (as opposed to microservices architecture).
+
+== Tech Stack
+
+- **Spring Boot** 2.6.6
+- **Spring Web** (REST APIs)
+- **Spring Data JPA** (Hibernate ORM)
+- **H2 Database** (in-memory, runtime)
+- **SpringDoc OpenAPI** 1.7.0 (Swagger UI)
+- **Java 17**
+- **Maven**
+
+== Architecture (Monolithic)
+
+All layers reside within the same application:
+
+- *Controller*: `StudentController` — REST endpoints under `/api/student`
+- *Service*: `StudentService` — business logic
+- *Repository*: `StudentRepository`, `AddressRepository` — JPA persistence
+- *Entity*: `Student` (↔ `Address` via `@OneToOne`) — JPA entities
+- *Request/Response*: `CreateStudentRequest`, `StudentResponse` — DTOs
+
+== REST Endpoints
+
+|=== 
+| Method | Endpoint | Description
+| `GET` | `/api/student/hello` | Health check
+| `POST` | `/api/student/create` | Create a student (with address)
+| `GET` | `/api/student/getById/{id}` | Get student by ID
+| `GET` | `/api/student/getAll` | Get all students
+|===
+
+== Data Model
+
+- **Student**: `id`, `first_name`, `last_name`, `email` → has a `@OneToOne` Address
+- **Address**: `id`, `street`, `city`
+- StudentResponse flattens both into a single DTO
+
+== Run
+
+[source,bash]
+----
+./mvnw spring-boot:run
+----
+
+Swagger UI: `http://localhost:8080/swagger-ui.html`
+
+== Purpose
+
+This app was built as a **monolithic reference** to contrast with a microservices-based refactor (see sibling projects `university-student-service` and `university-address-service` in the same repository).
+</path>
+</write_to_file>
