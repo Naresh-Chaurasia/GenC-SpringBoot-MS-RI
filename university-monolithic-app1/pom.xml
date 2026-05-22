@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.infybuzz</groupId>
-	<artifactId>university-monolithic-app</artifactId>
+	<artifactId>university-monolithic-app1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>university-monolithic-app</name>
-	<description>university-monolithic-app</description>
+	<name>university-monolithic-app1</name>
+	<description>university-monolithic-app1</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

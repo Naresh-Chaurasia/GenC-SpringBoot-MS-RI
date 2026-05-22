@@ -52,3 +52,16 @@ Swagger UI: `http://localhost:8080/swagger-ui.html`
 This app was built as a **monolithic reference** to contrast with a microservices-based refactor (see sibling projects `university-student-service` and `university-address-service` in the same repository).
 </path>
 </write_to_file>
+
+
+.Collapsible Resource
+[%collapsible]
+====
+* H2
+* http://localhost:8080/h2-console (user/password)
+====
+
+
+##############################################
+
+---
