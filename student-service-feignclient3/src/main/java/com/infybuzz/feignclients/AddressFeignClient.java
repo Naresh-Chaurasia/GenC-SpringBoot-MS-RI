@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.infybuzz.response.AddressResponse;
 
 //@FeignClient(url = "${address.service.url}", value = "address-feign-client",path = "/api/address")
-@FeignClient(value = "address-service", path = "/api/address")
+@FeignClient(url="http://localhost:8082",value = "address-service", path = "/api/address")
 public interface AddressFeignClient {
 
 	@GetMapping("/getById/{id}")
