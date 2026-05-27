@@ -15,6 +15,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 @EnableJpaRepositories("com.infybuzz.repository")
 public class StartStudent {
 	
+	//address.service.url=http://localhost:8082/api/address/getById/1
 	@Value("${address.service.url}")
 	private String addressServiceUrl;
 
